@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class Componente2Component {
 
+  nombre = "Miguel"
+
+  cursoAlumno = "Elige un curso"
+  setCursoUsuario(evento: Event) {
+    console.log(evento)
+    if ((<HTMLInputElement>evento.target).value == '1') {
+      this.cursoAlumno = "Soy de primero"
+    } else {
+      this.cursoAlumno = "Soy de segundo"
+    }
+  }
+
+  cambiarNombre(evento: Event) {
+    this.nombre = (<HTMLInputElement>evento.target).value
+  }
 }

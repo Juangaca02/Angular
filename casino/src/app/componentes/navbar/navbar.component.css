@@ -1,0 +1,8 @@
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Asegura que la barra de navegación esté por encima de otros elementos */
+  background-color: rgba(255, 255, 255, 0); /* Cambia el valor alpha para ajustar la transparencia */
+}

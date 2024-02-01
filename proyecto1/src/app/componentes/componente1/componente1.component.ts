@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class Componente1Component {
   nombreComp1 = "Este es el Componente 1"
+  private horas = 40;
+  login = 'pepito';
+  ativar = 'true';
+  getHoras() {
+    console.log(this.horas);
+    return this.horas;
+  }
 }
