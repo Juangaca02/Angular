@@ -3,31 +3,52 @@
   background-image: url('/assets/Casino1.jpg');
   background-size: cover;
   background-position: center;
-  min-height: 650px; /* Ajusta el valor según tus necesidades */
-  color: aqua; /* Cambia el color del texto */
-  text-align: center; /* Alinea el texto al centro */
+  min-height: 650px;
+  /* Ajusta el valor según tus necesidades */
+  color: rgb(229, 206, 182);
+  /* Cambia el color del texto */
+  text-align: center;
+  /* Alinea el texto al centro */
 }
 
 /* Superpone un div semi-transparente encima de la imagen */
 .overlay {
-  padding: 200px; /* Ajusta el valor según tus necesidades */
+  padding: 200px;
+  /* Ajusta el valor según tus necesidades */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Ajusta el valor alpha para ajustar la opacidad */
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(to bottom, rgba(24, 24, 28, 0), rgba(24, 24, 28, 1));
+  /* Ajusta el valor alpha para ajustar la opacidad */
 }
 
 /* Estilos para el texto */
 .bg-image h2 {
   color: rgb(220, 143, 105);
-  font-size: 32px; /* Tamaño de fuente */
+  font-size: 32px;
+  /* Tamaño de fuente */
 }
+
 .bg-image h1 {
   font-family: 'Cinzel';
   color: rgb(159, 142, 98);
-  font-size: 50px; /* Tamaño de fuente */
-  margin-bottom: 20px; /* Espacio entre el texto y el borde inferior de la imagen */
+  font-size: 50px;
+  /* Tamaño de fuente */
+  margin-bottom: 20px;
+  /* Espacio entre el texto y el borde inferior de la imagen */
 }
 
+.bg-image button {
+  background-color: rgb(159, 142, 98);
+}
+
+.bg-image button:hover {
+  background-color: rgb(87, 76, 48);
+}
+
+body {
+  background-color: rgb(24, 24, 28);
+}
