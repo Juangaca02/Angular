@@ -7,6 +7,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { RegisterComponent } from './componentes/register/register.component';
 
 
 
@@ -16,7 +17,8 @@ import { LoginComponent } from './componentes/login/login.component';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
