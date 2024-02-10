@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,14 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   title = 'casino';
-  
 
-  changeTitle(){
-    this.title ='Hola Sirvo';
+  constructor(private router: Router) { }
+
+  changeTitle() {
+    this.title = 'Hola Sirvo';
+  }
+
+  goToLogin() {
+    this.router.navigate(['login']);
   }
 }
