@@ -6,3 +6,8 @@ body {
 .dorado {
     color: rgb(159, 142, 98);
 }
+
+.centrar {
+    display: flex;
+    justify-content: center;
+}

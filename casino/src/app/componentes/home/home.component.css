@@ -50,4 +50,10 @@
   background-color: rgb(87, 76, 48);
 }
 
-
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Dos columnas con el mismo ancho */
+  gap: 50px;
+  /* Espacio entre los elementos */
+}
