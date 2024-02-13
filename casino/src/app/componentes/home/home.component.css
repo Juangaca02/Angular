@@ -42,11 +42,11 @@
   /* Espacio entre el texto y el borde inferior de la imagen */
 }
 
-.bg-image button {
+.btn-dorado {
   background-color: rgb(159, 142, 98);
 }
 
-.bg-image button:hover {
+.btn-dorado:hover {
   background-color: rgb(87, 76, 48);
 }
 
