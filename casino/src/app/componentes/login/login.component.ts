@@ -19,6 +19,9 @@ export class LoginComponent {
   }
 
   login(form: NgForm) {
+    const username = form.value.username;
+    const password = form.value.password;
+
   }
 
 }
