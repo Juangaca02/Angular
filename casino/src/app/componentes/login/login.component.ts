@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,6 +16,9 @@ export class LoginComponent {
 
   goToRegister() {
     this.router.navigate(['register']);
+  }
+
+  login(form: NgForm) {
   }
 
 }
