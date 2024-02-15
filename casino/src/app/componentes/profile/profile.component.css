@@ -1,4 +1,12 @@
 section {
-  margin-top: 70px;
+  margin-top: 170px;
   margin-bottom: 70px;
+}
+
+.btn-dorado {
+  background-color: rgb(159, 142, 98);
+}
+
+.btn-dorado:hover {
+  background-color: rgb(87, 76, 48);
 }
