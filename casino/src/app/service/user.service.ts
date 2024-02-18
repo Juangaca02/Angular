@@ -18,9 +18,9 @@ export class UserService {
   }
 
   //Crear usuario
-  createUser(user: User): Observable<Object> {
-    return this.httpClient.post(`http://localhost:8080/casino/createUser`, user);
-  }
+  // createUser(user: User): Observable<Object> {
+  //   return this.httpClient.post(`http://localhost:8080/casino/createUser`, user);
+  // }
 
   //Registrar Usuario
   registerUser(user: User): Observable<Object> {
@@ -28,18 +28,18 @@ export class UserService {
   }
 
   //Obtener Usuario
-  getUserById(id: number): Observable<User> {
-    return this.httpClient.get<User>(`http://localhost:8080/casino/findUserById/${id}`);
-  }
+  // getUserById(id: number): Observable<User> {
+  //   return this.httpClient.get<User>(`http://localhost:8080/casino/findUserById/${id}`);
+  // }
 
   //Actualizar Usuario
-  updateUser(id: number, user: User): Observable<Object> {
-    return this.httpClient.put(`http://localhost:8080/casino/updateUser/${id}`, user);
-  }
+  // updateUser(id: number, user: User): Observable<Object> {
+  //   return this.httpClient.put(`http://localhost:8080/casino/updateUser/${id}`, user);
+  // }
 
   //Eliminar Usuario
-  deleteUser(id: number): Observable<Object> {
-    return this.httpClient.delete(`http://localhost:8080/casino/saveUser/${id}`);
-  }
+  // deleteUser(id: number): Observable<Object> {
+  //   return this.httpClient.delete(`http://localhost:8080/casino/saveUser/${id}`);
+  // }
 
 }

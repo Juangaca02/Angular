@@ -11,6 +11,7 @@ import { RegisterComponent } from './componentes/register/register.component';
 import { ProfileComponent } from './componentes/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { EditProfileComponent } from './componentes/edit-profile/edit-profile.component';
 
 
 
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,

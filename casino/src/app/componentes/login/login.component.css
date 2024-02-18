@@ -1,11 +1,3 @@
-.botonLogin {
-    background-image: linear-gradient(to right, rgb(131, 111, 62), rgb(153, 153, 106));
-}
-
-.botonLogin:hover {
-    background-image: linear-gradient(to right, rgb(136, 110, 46), rgb(156, 156, 79));
-}
-
 .backgroundLogin {
     background-color: rgb(24, 24, 28);
 }
