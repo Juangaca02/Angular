@@ -11,7 +11,7 @@ import { error } from 'console';
 })
 export class RegisterComponent {
 
-  user: User = new User;
+  user!: User;
 
   constructor(
     private router: Router,

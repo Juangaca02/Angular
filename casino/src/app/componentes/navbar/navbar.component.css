@@ -3,6 +3,33 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000; /* Asegura que la barra de navegación esté por encima de otros elementos */
-  background-color: rgba(255, 255, 255, 0); /* Cambia el valor alpha para ajustar la transparencia */
+  z-index: 1000;
+  /* Asegura que la barra de navegación esté por encima de otros elementos */
+  background-color: rgba(255, 255, 255, 0);
+  /* Cambia el valor alpha para ajustar la transparencia */
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(24, 24, 28);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  right: 0;
+  border-radius: 10px;
+
+  a:hover {
+    color: red;
+  }
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }

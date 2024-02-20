@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
+import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
@@ -33,7 +33,8 @@ import { EditProfileComponent } from './componentes/edit-profile/edit-profile.co
     FormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    [CookieService]
   ],
   bootstrap: [AppComponent]
 })

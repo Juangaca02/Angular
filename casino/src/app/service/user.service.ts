@@ -17,15 +17,22 @@ export class UserService {
     return this.httpClient.get<User[]>(`${this.baseURL}`);
   }
 
-  //Crear usuario
-  // createUser(user: User): Observable<Object> {
-  //   return this.httpClient.post(`http://localhost:8080/casino/createUser`, user);
-  // }
+  //Login usuario
+  loginUser(username: string, password: string): Observable<Object> {
+    return this.httpClient.post(`http://localhost:8080/casino/login`, { username, password });
+  }
 
   //Registrar Usuario
   registerUser(user: User): Observable<Object> {
     return this.httpClient.post(`http://localhost:8080/casino/saveUser`, user);
   }
+
+  //Obtener Usuario por ID
+  getUserById(token: string): Observable<any> {
+    return this.httpClient.get<any>(`http://localhost:8080/casino/navbar/${token}`);
+  }
+
+
 
   //Obtener Usuario
   // getUserById(id: number): Observable<User> {

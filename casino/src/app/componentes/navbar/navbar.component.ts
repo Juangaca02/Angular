@@ -1,4 +1,8 @@
 import { Component, HostListener } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { UserService } from '../../service/user.service';
+import { navbarUser } from '../../interfaces/navbarUser';
+import { NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,8 +10,37 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private cookieService: CookieService
+  ) {
+    this.cookieService.get('token');
+  }
+  token: string = '';
+  navbarUser: navbarUser;
   isNavbarBlurred: boolean = false;
+
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        this.token = this.cookieService.get('token');
+        this.usuarioAhora();
+      }
+    });
+  }
+
+  usuarioAhora() {
+    if (this.token) {
+      this.userService.getUserById(this.token).subscribe((dato: any) => {
+        this.navbarUser = dato;
+      },
+        error => {
+          console.log(error);
+        });
+    }
+  }
+
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
