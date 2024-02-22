@@ -5,6 +5,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { RegisterComponent } from './componentes/register/register.component';
 import { ProfileComponent } from './componentes/profile/profile.component';
 import { EditProfileComponent } from './componentes/edit-profile/edit-profile.component';
+import { EditBetsComponent } from './componentes/edit-bets/edit-bets.component';
 
 const routes: Routes = [];
 
@@ -15,7 +16,8 @@ const approutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'edit_profile', component: EditProfileComponent }
+  { path: 'edit_profile', component: EditProfileComponent },
+  { path: 'edit_bets', component: EditBetsComponent }
 ]
 
 

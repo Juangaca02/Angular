@@ -12,6 +12,7 @@ import { ProfileComponent } from './componentes/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EditProfileComponent } from './componentes/edit-profile/edit-profile.component';
+import { EditBetsComponent } from './componentes/edit-bets/edit-bets.component';
 
 
 
@@ -24,7 +25,8 @@ import { EditProfileComponent } from './componentes/edit-profile/edit-profile.co
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    EditBetsComponent
   ],
   imports: [
     BrowserModule,
