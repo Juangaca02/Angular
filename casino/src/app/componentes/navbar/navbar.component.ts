@@ -41,6 +41,10 @@ export class NavbarComponent {
     }
   }
 
+  logOut() {
+    this.cookieService.delete('token');
+    this.router.navigate(['home']);
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

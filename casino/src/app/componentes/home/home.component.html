@@ -4,9 +4,11 @@
     <h1>Win Big Playing Luxury Casino Games</h1>
     <p>Win a once-in-a-lifetime exclusive Experience!</p>
     <p>{{title}}</p>
-    <button type="button" (click)="goToLogin()"
-      class=" btn-dorado text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-blue-800">Get
-      started</button>
+    <div *ngIf="token == ''">
+      <button type="button" (click)="goToLogin()"
+        class=" btn-dorado text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-blue-800">Get
+        started</button>
+    </div>
   </div>
 </div>
 <br><br>
@@ -37,62 +39,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th class="px-6 py-4 font-medium dorado">
-              Apple MacBook Pro 17"
-            </th>
-            <td class="px-6 py-4">
-              Silver
-            </td>
-            <td class="px-6 py-4">
-              Laptop
-            </td>
-            <td class="px-6 py-4">
-              $2999
-            </td>
-            <td class="px-6 py-4">
-              <button type="button" (click)="goToLogin()"
-                class="btn-dorado text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-blue-800">Get
-                started</button>
-            </td>
-          </tr>
-          <tr>
-            <th class="px-6 py-4 font-medium dorado">
-              Apple MacBook Pro 17"
-            </th>
-            <td class="px-6 py-4">
-              Silver
-            </td>
-            <td class="px-6 py-4">
-              Laptop
-            </td>
-            <td class="px-6 py-4">
-              $2999
-            </td>
-            <td class="px-6 py-4">
-              <button type="button" (click)="goToLogin()"
-                class="btn-dorado text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-blue-800">Get
-                started</button>
-            </td>
-          </tr>
-          <tr>
-            <th class="px-6 py-4 font-medium dorado">
-              Apple MacBook Pro 17"
-            </th>
-            <td class="px-6 py-4">
-              Silver
-            </td>
-            <td class="px-6 py-4">
-              Laptop
-            </td>
-            <td class="px-6 py-4">
-              $2999
-            </td>
-            <td class="px-6 py-4">
-              <button type="button" (click)="goToLogin()"
-                class="btn-dorado text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-blue-800">Get
-                started</button>
-            </td>
+          <tr *ngFor="let bet of bets">
+            <th class="px-6 py-4 font-medium dorado">{{bet.user_id}}</th>
+            <td class="px-6 py-4">{{bet.game_id}}</td>
+            <td class="px-6 py-4">{{bet.description_bet}}</td>
+            <td class="px-6 py-4">{{bet.amount_bet}}</td>
           </tr>
         </tbody>
       </table>
@@ -133,6 +84,11 @@
             </td>
             <td class="px-6 py-4">
               $2999
+            </td>
+            <td class="px-6 py-4">
+              <button type="button" (click)="goToLogin()"
+                class="btn-dorado text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-blue-800">Get
+                started</button>
             </td>
           </tr>
           <tr>
