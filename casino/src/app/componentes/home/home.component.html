@@ -40,8 +40,8 @@
         </thead>
         <tbody>
           <tr *ngFor="let bet of bets">
-            <th class="px-6 py-4 font-medium dorado">{{bet.user_id}}</th>
-            <td class="px-6 py-4">{{bet.game_id}}</td>
+            <th class="px-6 py-4 font-medium dorado">{{bet.user_id.name}}</th>
+            <td class="px-6 py-4">{{bet.game_id.name}}</td>
             <td class="px-6 py-4">{{bet.description_bet}}</td>
             <td class="px-6 py-4">{{bet.amount_bet}}</td>
           </tr>

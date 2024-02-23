@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EditProfileComponent } from './componentes/edit-profile/edit-profile.component';
 import { EditBetsComponent } from './componentes/edit-bets/edit-bets.component';
+import { CreateBetsComponent } from './componentes/create-bets/create-bets.component';
 
 
 
@@ -26,7 +27,8 @@ import { EditBetsComponent } from './componentes/edit-bets/edit-bets.component';
     RegisterComponent,
     ProfileComponent,
     EditProfileComponent,
-    EditBetsComponent
+    EditBetsComponent,
+    CreateBetsComponent
   ],
   imports: [
     BrowserModule,
