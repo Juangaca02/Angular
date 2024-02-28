@@ -16,6 +16,7 @@ import { first } from 'rxjs';
 export class LoginComponent {
   username: '';
   password: '';
+  errorMessage: string = '';
 
 
   constructor(
@@ -31,11 +32,12 @@ export class LoginComponent {
   login() {
     this.userService.loginUser(this.username, this.password)
       .subscribe((dato: any) => {
-        this.cookieService.set('token', '' + dato.token);
+        this.cookieService.set('token', dato.token);
         this.router.navigate(['home']);
       },
         error => {
           console.log(error);
+          this.errorMessage = 'Usuario o contraseña inválidos';
         });
 
   }

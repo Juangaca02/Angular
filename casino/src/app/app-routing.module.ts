@@ -7,6 +7,7 @@ import { ProfileComponent } from './componentes/profile/profile.component';
 import { EditProfileComponent } from './componentes/edit-profile/edit-profile.component';
 import { EditBetsComponent } from './componentes/edit-bets/edit-bets.component';
 import { CreateBetsComponent } from './componentes/create-bets/create-bets.component';
+import { TransactionComponent } from './componentes/transaction/transaction.component';
 
 const routes: Routes = [];
 
@@ -18,8 +19,9 @@ const approutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'edit_profile', component: EditProfileComponent },
-  { path: 'edit_bets', component: EditBetsComponent },
-  { path: 'create_bets', component: CreateBetsComponent }
+  { path: 'edit_bets/:id', component: EditBetsComponent },
+  { path: 'create_bets', component: CreateBetsComponent },
+  { path: 'transaction', component: TransactionComponent },
 ]
 
 

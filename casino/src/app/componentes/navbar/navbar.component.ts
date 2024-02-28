@@ -20,6 +20,7 @@ export class NavbarComponent {
   token: string = '';
   navbarUser: navbarUser;
   isNavbarBlurred: boolean = false;
+  loading: boolean = true;
 
   ngOnInit() {
     this.router.events.subscribe((event) => {
@@ -30,16 +31,27 @@ export class NavbarComponent {
     });
   }
 
+  goToProfile() {
+    this.router.navigate(['profile']);
+  }
+
+  goToTransaction() {
+    this.router.navigate(['transaction']);
+  }
+
   usuarioAhora() {
     if (this.token) {
       this.userService.getUserById(this.token).subscribe((dato: any) => {
         this.navbarUser = dato;
+        console.log(this.navbarUser);
       },
         error => {
           console.log(error);
-        });
+        }
+      );
     }
   }
+
 
   logOut() {
     this.cookieService.delete('token');

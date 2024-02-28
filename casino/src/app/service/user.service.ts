@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../interfaces/user';
+import { Profile } from '../interfaces/profile';
+import { oldPassword } from '../interfaces/oldPassword';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +25,7 @@ export class UserService {
   }
 
   //Registrar Usuario
-  registerUser(user: User): Observable<Object> {
+  registerUser(user: User): Observable<any> {
     return this.httpClient.post(`http://localhost:8080/casino/saveUser`, user);
   }
 
@@ -32,21 +34,18 @@ export class UserService {
     return this.httpClient.get<any>(`http://localhost:8080/casino/navbar/${token}`);
   }
 
+  getProfile(token: string): Observable<any> {
+    return this.httpClient.get<any>(`http://localhost:8080/casino/profile/${token}`);
+  }
 
+  //Actualizar Password
+  updatePassword(token: string, oldPassword: oldPassword): Observable<any> {
+    return this.httpClient.post(`http://localhost:8080/casino/updatePassword/${token}`, oldPassword);
+  }
 
-  //Obtener Usuario
-  // getUserById(id: number): Observable<User> {
-  //   return this.httpClient.get<User>(`http://localhost:8080/casino/findUserById/${id}`);
-  // }
-
-  //Actualizar Usuario
-  // updateUser(id: number, user: User): Observable<Object> {
-  //   return this.httpClient.put(`http://localhost:8080/casino/updateUser/${id}`, user);
-  // }
-
-  //Eliminar Usuario
-  // deleteUser(id: number): Observable<Object> {
-  //   return this.httpClient.delete(`http://localhost:8080/casino/saveUser/${id}`);
-  // }
+  // Eliminar Usuario
+  deleteUser(token: string): Observable<Object> {
+    return this.httpClient.delete(`http://localhost:8080/casino/deleteUser/${token}`);
+  }
 
 }

@@ -1,9 +1,8 @@
-<div class="bg-image">
+<div class="bg-image mb-20">
   <div class="overlay">
     <h2>────── EXPERIENCE THE RICHNESS ──────</h2>
     <h1>Win Big Playing Luxury Casino Games</h1>
     <p>Win a once-in-a-lifetime exclusive Experience!</p>
-    <p>{{title}}</p>
     <div *ngIf="token == ''">
       <button type="button" (click)="goToLogin()"
         class=" btn-dorado text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-blue-800">Get
@@ -11,8 +10,7 @@
     </div>
   </div>
 </div>
-<br><br>
-<div class="bg-body centrar grid-container">
+<div class="bg-body centrar grid-container mb-20">
   <div class="mx-auto ">
     <a class="centrar" href=""><img src="/assets/roulette.png" alt="" style="height: 100px;"></a>
     <p class="text-white text-center">Roulette</p>
@@ -25,98 +23,25 @@
               User name
             </th>
             <th scope="col" class="px-6 py-3">
-              Color
-            </th>
-            <th scope="col" class="px-6 py-3">
               Category
             </th>
             <th scope="col" class="px-6 py-3">
               Price
             </th>
-            <th scope="col" class="px-6 py-3">
+            <th *ngIf="token != ''" scope="col" class="px-6 py-3">
               Option
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let bet of bets">
-            <th class="px-6 py-4 font-medium dorado">{{bet.user_id.name}}</th>
-            <td class="px-6 py-4">{{bet.game_id.name}}</td>
-            <td class="px-6 py-4">{{bet.description_bet}}</td>
-            <td class="px-6 py-4">{{bet.amount_bet}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div class="mx-auto ">
-    <a class="centrar" href=""><img src="/assets/roulette.png" alt="" style="height: 100px;"></a>
-    <p class="text-white text-center">Roulette</p>
-    <!-- <table border="1" class=" min-w-4 text-white text-center border border-white"> -->
-    <div class="border border-yellow-500 rounded-lg">
-      <table class="w-full text-sm text-left rtl:text-right text-white">
-        <thead class="text-xs uppercase dark:text-gray-400">
-          <tr>
-            <th scope="col" class="px-6 py-3">
-              Product name
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Color
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Category
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Price
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th class="px-6 py-4 font-medium dorado">
-              Apple MacBook Pro 17"
-            </th>
-            <td class="px-6 py-4">
-              Silver
-            </td>
-            <td class="px-6 py-4">
-              Laptop
-            </td>
-            <td class="px-6 py-4">
-              $2999
-            </td>
-            <td class="px-6 py-4">
-              <button type="button" (click)="goToLogin()"
-                class="btn-dorado text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-blue-800">Get
-                started</button>
-            </td>
-          </tr>
-          <tr>
-            <th class="px-6 py-4 font-medium dorado">
-              Apple MacBook Pro 17"
-            </th>
-            <td class="px-6 py-4">
-              Silver
-            </td>
-            <td class="px-6 py-4">
-              Laptop
-            </td>
-            <td class="px-6 py-4">
-              $2999
-            </td>
-          </tr>
-          <tr>
-            <th class="px-6 py-4 font-medium dorado">
-              Apple MacBook Pro 17"
-            </th>
-            <td class="px-6 py-4">
-              Silver
-            </td>
-            <td class="px-6 py-4">
-              Laptop
-            </td>
-            <td class="px-6 py-4">
-              $2999
+          <tr *ngFor="let bet of betRoulette">
+            <th class="px-6 py-4 font-medium dorado">{{bet.name}} {{bet.username}}</th>
+            <td class="px-6 py-4">{{bet.description}}</td>
+            <td class="px-6 py-4">{{bet.balance}}</td>
+            <td *ngIf="token != '' && bet.user_id == profile.id " class="px-6 py-4">
+              <button type="button" (click)="edit_bets(bet.id)"
+                class="btn-dorado text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-blue-800">Edit
+                Bet</button>
             </td>
           </tr>
         </tbody>
@@ -124,86 +49,15 @@
     </div>
   </div>
   <div class="mx-auto ">
-    <a class="centrar" href=""><img src="/assets/roulette.png" alt="" style="height: 100px;"></a>
-    <p class="text-white text-center">Roulette</p>
-    <!-- <table border="1" class=" min-w-4 text-white text-center border border-white"> -->
-    <div class="border border-yellow-500 rounded-lg">
-      <table class="w-full text-sm text-left rtl:text-right text-white">
-        <thead class="text-xs uppercase dark:text-gray-400">
-          <tr>
-            <th scope="col" class="px-6 py-3">
-              Product name
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Color
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Category
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Price
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th class="px-6 py-4 font-medium dorado">
-              Apple MacBook Pro 17"
-            </th>
-            <td class="px-6 py-4">
-              Silver
-            </td>
-            <td class="px-6 py-4">
-              Laptop
-            </td>
-            <td class="px-6 py-4">
-              $2999
-            </td>
-          </tr>
-          <tr>
-            <th class="px-6 py-4 font-medium dorado">
-              Apple MacBook Pro 17"
-            </th>
-            <td class="px-6 py-4">
-              Silver
-            </td>
-            <td class="px-6 py-4">
-              Laptop
-            </td>
-            <td class="px-6 py-4">
-              $2999
-            </td>
-          </tr>
-          <tr>
-            <th class="px-6 py-4 font-medium dorado">
-              Apple MacBook Pro 17"
-            </th>
-            <td class="px-6 py-4">
-              Silver
-            </td>
-            <td class="px-6 py-4">
-              Laptop
-            </td>
-            <td class="px-6 py-4">
-              $2999
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div class="mx-auto">
-    <a class="centrar" href=""><img src="/assets/poker.png" alt="" style="height: 90px;"></a>
+    <a class="centrar" href=""><img src="/assets/poker.png" alt="" style="height: 100px;"></a>
     <p class="text-white text-center">Poker</p>
+    <!-- <table border="1" class=" min-w-4 text-white text-center border border-white"> -->
     <div class="border border-yellow-500 rounded-lg">
       <table class="w-full text-sm text-left rtl:text-right text-white">
         <thead class="text-xs uppercase dark:text-gray-400">
           <tr>
             <th scope="col" class="px-6 py-3">
-              Product name
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Color
+              User name
             </th>
             <th scope="col" class="px-6 py-3">
               Category
@@ -211,22 +65,24 @@
             <th scope="col" class="px-6 py-3">
               Price
             </th>
-            <th scope="col" class="px-6 py-3">
-              Product name
+            <th *ngIf="token != ''" scope="col" class="px-6 py-3">
+              Option
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of users">
-            <th class="px-6 py-4 font-medium dorado">{{user.name}}</th>
-            <td class="px-6 py-4">{{user.username}}</td>
-            <td class="px-6 py-4">{{user.email}}</td>
-            <td class="px-6 py-4">{{user.balance}} €</td>
-            <td class="px-6 py-4">{{user.role}}</td>
+          <tr *ngFor="let bet of betPoker">
+            <th class="px-6 py-4 font-medium dorado">{{bet.name}} {{bet.username}}</th>
+            <td class="px-6 py-4">{{bet.description}}</td>
+            <td class="px-6 py-4">{{bet.balance}}</td>
+            <td *ngIf="token != '' && bet.user_id == profile.id " class="px-6 py-4">
+              <button type="button" (click)="edit_bets(bet.id)"
+                class="btn-dorado text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-blue-800">Edit
+                Bet</button>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

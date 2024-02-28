@@ -1,10 +1,7 @@
-import { Game } from "./game";
-import { User } from "./user";
-
 export interface Bet {
   id: number;
-  user_id: User;
-  game_id: Game;
+  user_id: number;
+  game_id: number;
   description_bet: string;
   amount_bet: number;
 }

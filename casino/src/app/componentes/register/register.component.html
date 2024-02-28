@@ -46,6 +46,9 @@
                         <input type="text" name="name" id="name" [(ngModel)]="user.name"
                             class="bg-gray-700 text-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="name" required="">
+                        <p class="text-red-500 text-sm mb-4" *ngIf="validations?.register?.name === false">The anme must
+                            be a minimum of
+                            3 characters</p>
                     </div>
                     <div>
                         <label for="username" class="block mb-2 text-sm font-medium dorado">Your
@@ -53,6 +56,9 @@
                         <input type="text" name="username" id="username" [(ngModel)]="user.username"
                             class="bg-gray-700 text-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Username" required="">
+                        <p class="text-red-500 text-sm mb-4" *ngIf="validations?.register?.username === false">The
+                            username must be a
+                            minimum of 3 characters</p>
                     </div>
                     <div>
                         <label for="email" class="block mb-2 text-sm font-medium dorado">Your
@@ -60,6 +66,9 @@
                         <input type="email" name="email" id="email" [(ngModel)]="user.email"
                             class="bg-gray-700 text-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="name@company.com" required="">
+                        <p class="text-red-500 text-sm mb-4" *ngIf="validations?.register?.email === false">The email
+                            must be a real
+                            email</p>
                     </div>
                     <div>
                         <label for="password" class="block mb-2 text-sm font-medium dorado">Password</label>
@@ -67,13 +76,8 @@
                             [(ngModel)]="user.password"
                             class="bg-gray-700 text-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             required="">
-                    </div>
-                    <div>
-                        <label for="confirm-password" class="block mb-2 text-sm font-medium dorado">Confirm
-                            Password</label>
-                        <input type="password" name="confirm-password" id="confirm-password" placeholder="••••••••"
-                            class="bg-gray-700 text-white sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            required="">
+                        <p class="text-red-500 text-sm mb-4" *ngIf="validations?.register?.password === false">The
+                            password must be a minimum of 3 characters</p>
                     </div>
                     <button type="submit"
                         class="botonGeneral btn btn-success w-full text-white hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create

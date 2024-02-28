@@ -14,12 +14,15 @@ import { FormsModule } from '@angular/forms';
 import { EditProfileComponent } from './componentes/edit-profile/edit-profile.component';
 import { EditBetsComponent } from './componentes/edit-bets/edit-bets.component';
 import { CreateBetsComponent } from './componentes/create-bets/create-bets.component';
+import { ConfirmModalComponent } from './componentes/confirm-modal/confirm-modal.component';
+import { TransactionComponent } from './componentes/transaction/transaction.component';
 
-
+import { UnixDatePipe } from '../pipes/unix-date.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    UnixDatePipe,
     NavbarComponent,
     FooterComponent,
     HomeComponent,
@@ -28,7 +31,9 @@ import { CreateBetsComponent } from './componentes/create-bets/create-bets.compo
     ProfileComponent,
     EditProfileComponent,
     EditBetsComponent,
-    CreateBetsComponent
+    CreateBetsComponent,
+    ConfirmModalComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,
