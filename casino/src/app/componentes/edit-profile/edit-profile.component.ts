@@ -4,6 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { Profile } from '../../interfaces/profile';
 import { oldPassword } from '../../interfaces/oldPassword';
+import { oldProfile } from '../../interfaces/oldProfile';
 
 @Component({
   selector: 'app-edit-profile',
@@ -16,7 +17,12 @@ export class EditProfileComponent {
   token: string = '';
   profiles: Profile;
   loading: boolean = true;
-  allGood: boolean = true;
+  allGood: boolean = false;
+  oldProfile: oldProfile = {
+    name: '',
+    username: '',
+    email: ''
+  }
   oldPassword: oldPassword = {
     oldPassword: '',
     password: '',
@@ -24,6 +30,7 @@ export class EditProfileComponent {
   }
 
   validation: any = {
+    profile: {},
     password: {}
   };
 
@@ -44,6 +51,9 @@ export class EditProfileComponent {
     if (this.token) {
       this.userService.getProfile(this.token).subscribe((dato: any) => {
         this.profiles = dato;
+        this.oldProfile.name = this.profiles.name;
+        this.oldProfile.username = this.profiles.username;
+        this.oldProfile.email = this.profiles.email;
         //console.log(this.profiles);
       },
         error => {
@@ -56,16 +66,49 @@ export class EditProfileComponent {
     }
   }
 
+  updateProfile() {
+    if (!this.oldProfile.name || this.oldProfile.name.length < 3) {
+      this.validation.profile.name = false;
+      return;
+    } else {
+      this.validation.profile.name = true;
+    }
+
+    if (!this.oldProfile.username || this.oldProfile.username.length < 3) {
+      this.validation.profile.username = false;
+      return;
+    } else {
+      this.validation.profile.username = true;
+    }
+
+    if (!this.oldProfile.email || !this.validateMail(this.profiles.email)) {
+      this.validation.profile.email = false;
+      return;
+    } else {
+      this.validation.profile.email = true;
+    }
+    if (this.token) {
+      this.userService.updateProfile(this.token, this.oldProfile).subscribe((dato: any) => {
+        this.allGood = true;
+        if (dato == false) {
+          this.allGood = false;
+        }
+      }, error => {
+        console.log(error);
+      }
+      )
+    }
+  }
+
   onSubmit(tipo: string) {
     if (tipo === 'perfil') {
-
+      this.updateProfile();
+      if (this.allGood == true) {
+        this.router.navigate(['profile']);
+      }
     } else if (tipo === 'pass') {
-      console.log("PIno");
-
       this.updatePassword();
       if (this.allGood == true) {
-        console.log("PIno2");
-
         this.router.navigate(['profile']);
       }
     }
@@ -85,14 +128,27 @@ export class EditProfileComponent {
           this.validation.password.oldPassword = false;
           this.allGood = false;
         }
-
-
-
       }, error => {
         console.log(error);
       }
       )
     }
+  }
+
+  validateMail(mail: string) {
+    var pattronMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (pattronMail.test(mail)) {
+      if (mail.indexOf('@') !== -1 && mail.indexOf('.') !== -1) {
+        var part = mail.split('@');
+        if (
+          part[part.length - 1].indexOf('.') - part[part.length - 1].length !==
+          -1
+        ) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
 

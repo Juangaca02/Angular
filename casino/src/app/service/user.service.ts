@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from '../interfaces/user';
 import { Profile } from '../interfaces/profile';
 import { oldPassword } from '../interfaces/oldPassword';
+import { oldProfile } from '../interfaces/oldProfile';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,11 @@ export class UserService {
   //Actualizar Password
   updatePassword(token: string, oldPassword: oldPassword): Observable<any> {
     return this.httpClient.post(`http://localhost:8080/casino/updatePassword/${token}`, oldPassword);
+  }
+
+  //Actualizar Perfil
+  updateProfile(token: string, oldProfile: oldProfile): Observable<any> {
+    return this.httpClient.post(`http://localhost:8080/casino/updateProfile/${token}`, oldProfile);
   }
 
   // Eliminar Usuario
